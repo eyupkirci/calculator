@@ -1,259 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IOS Calculator | Mesut OZTURK</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
 
-      body {
-            background: linear-gradient(#cc95c0,#dbd4b4,#7aa1d2);
-            background-attachment: fixed;
-        }
-      #main-container {
-        width: 300px;
-        min-height: 500px;
-        background-color: rgba(0,0,0,0.5);
-        margin: 50px auto;
-        border-radius: 10px;
-        padding: 10px;
-        opacity:0.9;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IOS Calculator | Eyup KIRCI </title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-      #main-container:hover {
-        background-color: rgba(0,0,0,0.8);
+    body {
+      background: linear-gradient(#cc95c0, #dbd4b4, #7aa1d2);
+      background-attachment: fixed;
+    }
 
-      }
+    #main-container {
+      width: 300px;
+      min-height: 500px;
+      background-color: rgba(0, 0, 0, 0.5);
+      margin: 50px auto;
+      border-radius: 10px;
+      padding: 10px;
+      opacity: 0.9;
+    }
 
-      /* --------  SCREEN ------------------- */
-      #screen-container {
-        width: 100%;
-        /* background-color: chocolate; */
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        padding: 10px;
-        grid-gap: 10px;
-      }
+    #main-container:hover {
+      background-color: rgba(0, 0, 0, 0.8);
 
-      #upper-screen {
-        width: 100%;
-        height: 100px;
-        background-color: rgba(209, 195, 195, 0.486);
-        font-size: 2em;
-        text-align: center;
-        color: #fff;
-        padding: 20px;
-        overflow: auto;
-        white-space: nowrap;
-      }
+    }
 
-      #lower-screen::-webkit-scrollbar {
-        display: none;
-      }
-      #upper-screen::-webkit-scrollbar {
-        display: none;
-      }
+    /* --------  SCREEN ------------------- */
+    #screen-container {
+      width: 100%;
+      /* background-color: chocolate; */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      padding: 10px;
+      grid-gap: 10px;
+    }
 
-      #lower-screen {
-        width: 100%;
-        height: 50px;
-        background-color: rgba(209, 195, 195, 0.486);
-        font-size: 1.5em;
-        text-align: right;
-        color: #fff;
-        padding: 10px;
-        overflow: auto;
-      }
-      /* --------  BUTTON ------------------- */
-      #button-container {
-        width: 100%;
-        min-height: 300px;
-        /* background-color: blueviolet; */
-        margin-top: 20px;
-        margin-bottom: 30px;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        place-items: center;
-      }
+    #upper-screen {
+      width: 100%;
+      height: 100px;
+      background-color: rgba(209, 195, 195, 0.486);
+      font-size: 2em;
+      text-align: center;
+      color: #fff;
+      padding: 20px;
+      overflow: auto;
+      white-space: nowrap;
+    }
 
-      .btn {
-        /* border: solid; */
-      }
+    #lower-screen::-webkit-scrollbar {
+      display: none;
+    }
 
-      .btn button {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        border: none;
-        font-size: 1.5em;
-        font-weight: 300;
-        grid-gap: 10px;
-        cursor: pointer;
-      }
+    #upper-screen::-webkit-scrollbar {
+      display: none;
+    }
 
-      .btn button:hover{
-          opacity:0.7;
-      }
+    #lower-screen {
+      width: 100%;
+      height: 50px;
+      background-color: rgba(209, 195, 195, 0.486);
+      font-size: 1.5em;
+      text-align: right;
+      color: #fff;
+      padding: 10px;
+      overflow: auto;
+    }
 
-      .btn button:active {
-        background-color: cornsilk;
-        color: black;
-      }
-      .dark-grey {
-        background-color: rgb(51, 51, 51);
-        color: #fff;
-      }
-      .light-grey {
-        background-color: #a5a5a5;
-      }
-      .orange {
-        background-color: rgba(255, 166, 0, 0.74);
-        color: #fff;
-      }
-      /* ----------- BUTTON ZERO ----------- */
-      .btn17 {
-        grid-column: 1/3;
-      }
-      #button17 {
-        width: 120px;
-        border-radius: 50px;
-        text-align: left;
-        padding-left: 20px;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="main-container">
-      <div id="screen-container">
-        <div id="upper-screen"></div>
-        <div id="lower-screen"></div>
+    /* --------  BUTTON ------------------- */
+    #button-container {
+      width: 100%;
+      min-height: 300px;
+      /* background-color: blueviolet; */
+      margin-top: 20px;
+      margin-bottom: 30px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      place-items: center;
+    }
+
+    .btn {
+      /* border: solid; */
+    }
+
+    .btn button {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: none;
+      font-size: 1.5em;
+      font-weight: 300;
+      grid-gap: 10px;
+      cursor: pointer;
+    }
+
+    .btn button:hover {
+      opacity: 0.7;
+    }
+
+    .btn button:active {
+      background-color: cornsilk;
+      color: black;
+    }
+
+    .dark-grey {
+      background-color: rgb(51, 51, 51);
+      color: #fff;
+    }
+
+    .light-grey {
+      background-color: #a5a5a5;
+    }
+
+    .orange {
+      background-color: rgba(255, 166, 0, 0.74);
+      color: #fff;
+    }
+
+    /* ----------- BUTTON ZERO ----------- */
+    .btn17 {
+      grid-column: 1/3;
+    }
+
+    #button17 {
+      width: 120px;
+      border-radius: 50px;
+      text-align: left;
+      padding-left: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="main-container">
+    <div id="screen-container">
+      <div id="upper-screen"></div>
+      <div id="lower-screen"></div>
+    </div>
+    <div id="button-container">
+      <div class="btn btn1">
+        <button id="button1" class="light-grey">AC</button>
       </div>
-      <div id="button-container">
-        <div class="btn btn1">
-          <button id="button1" class="light-grey">AC</button>
-        </div>
-        <div class="btn btn2">
-          <button id="button2" class="light-grey">+/-</button>
-        </div>
-        <div class="btn btn3">
-          <button id="button3" class="light-grey">&rarr;</button>
-        </div>
-        <div class="btn btn4">
-          <button id="button4" class="orange">%</button>
-        </div>
-        <div class="btn btn5">
-          <button id="button5" class="dark-grey">7</button>
-        </div>
-        <div class="btn btn6">
-          <button id="button6" class="dark-grey">8</button>
-        </div>
-        <div class="btn btn7">
-          <button id="button7" class="dark-grey">9</button>
-        </div>
-        <div class="btn btn8">
-          <button id="button8" class="orange">x</button>
-        </div>
-        <div class="btn btn9">
-          <button id="button9" class="dark-grey">4</button>
-        </div>
-        <div class="btn btn10">
-          <button id="button10" class="dark-grey">5</button>
-        </div>
-        <div class="btn btn11">
-          <button id="button11" class="dark-grey">6</button>
-        </div>
-        <div class="btn btn12">
-          <button id="button12" class="orange">-</button>
-        </div>
-        <div class="btn btn13">
-          <button id="button13" class="dark-grey">1</button>
-        </div>
-        <div class="btn btn14">
-          <button id="button14" class="dark-grey">2</button>
-        </div>
-        <div class="btn btn15">
-          <button id="button15" class="dark-grey">3</button>
-        </div>
-        <div class="btn btn16">
-          <button id="button16" class="orange">+</button>
-        </div>
-        <div class="btn btn17">
-          <button id="button17" class="dark-grey">0</button>
-        </div>
-        <div class="btn btn18">
-          <button id="button18" class="dark-grey">.</button>
-        </div>
-        <div class="btn btn19">
-          <button id="button19" class="orange">=</button>
-        </div>
+      <div class="btn btn2">
+        <button id="button2" class="light-grey">+/-</button>
+      </div>
+      <div class="btn btn3">
+        <button id="button3" class="light-grey">&rarr;</button>
+      </div>
+      <div class="btn btn4">
+        <button id="button4" class="orange">%</button>
+      </div>
+      <div class="btn btn5">
+        <button id="button5" class="dark-grey">7</button>
+      </div>
+      <div class="btn btn6">
+        <button id="button6" class="dark-grey">8</button>
+      </div>
+      <div class="btn btn7">
+        <button id="button7" class="dark-grey">9</button>
+      </div>
+      <div class="btn btn8">
+        <button id="button8" class="orange">x</button>
+      </div>
+      <div class="btn btn9">
+        <button id="button9" class="dark-grey">4</button>
+      </div>
+      <div class="btn btn10">
+        <button id="button10" class="dark-grey">5</button>
+      </div>
+      <div class="btn btn11">
+        <button id="button11" class="dark-grey">6</button>
+      </div>
+      <div class="btn btn12">
+        <button id="button12" class="orange">-</button>
+      </div>
+      <div class="btn btn13">
+        <button id="button13" class="dark-grey">1</button>
+      </div>
+      <div class="btn btn14">
+        <button id="button14" class="dark-grey">2</button>
+      </div>
+      <div class="btn btn15">
+        <button id="button15" class="dark-grey">3</button>
+      </div>
+      <div class="btn btn16">
+        <button id="button16" class="orange">+</button>
+      </div>
+      <div class="btn btn17">
+        <button id="button17" class="dark-grey">0</button>
+      </div>
+      <div class="btn btn18">
+        <button id="button18" class="dark-grey">.</button>
+      </div>
+      <div class="btn btn19">
+        <button id="button19" class="orange">=</button>
       </div>
     </div>
+  </div>
 
-    <script>
-      const upperscreen = document.getElementById("upper-screen");
-      const lowerscreen = document.getElementById("lower-screen");
+  <script>
+    const upperscreen = document.getElementById("upper-screen");
+    const lowerscreen = document.getElementById("lower-screen");
 
-      const numbers = document.querySelectorAll(".dark-grey");
-      numbers.forEach((element) => {
-        element.addEventListener("click", () => {
-          let number = element.innerHTML;
-          lowerscreen.innerHTML += number;
-          // upperscreen.innerHTML+=number;
-        });
+    const numbers = document.querySelectorAll(".dark-grey");
+    numbers.forEach((element) => {
+      element.addEventListener("click", () => {
+        let number = element.innerHTML;
+        lowerscreen.innerHTML += number;
+        // upperscreen.innerHTML+=number;
       });
+    });
 
-      const ac = document.getElementById("button1");
-      ac.addEventListener("click", () => {
-        lowerscreen.innerHTML = "";
-        upperscreen.innerHTML = "";
+    const ac = document.getElementById("button1");
+    ac.addEventListener("click", () => {
+      lowerscreen.innerHTML = "";
+      upperscreen.innerHTML = "";
+    });
+
+    const plusminus = document.getElementById("button2");
+    plusminus.addEventListener("click", () => {
+      lowerscreen.innerHTML *= -1;
+    });
+
+    const arrow = document.getElementById("button3");
+    arrow.addEventListener("click", () => {
+      let value = lowerscreen.innerHTML;
+      lowerscreen.innerHTML = value.slice(0, -1);
+    });
+
+    const operands = document.querySelectorAll(".orange");
+    operands.forEach((element) => {
+      element.addEventListener("click", () => {
+        let operand = element.innerHTML;
+        let screen1 = lowerscreen.innerHTML;
+        switch (operand) {
+          case "+":
+            lowerscreen.innerHTML += operand;
+            break;
+          case "-":
+            lowerscreen.innerHTML += operand;
+            break;
+          case "x":
+            lowerscreen.innerHTML += "*";
+            break;
+          case "%":
+            lowerscreen.innerHTML += "/";
+            break;
+          case "=":
+            let result = eval(screen1);
+            upperscreen.innerHTML = result;
+            break;
+
+          default:
+            break;
+        }
       });
+    });
+  </script>
+</body>
 
-      const plusminus = document.getElementById("button2");
-      plusminus.addEventListener("click", () => {
-        lowerscreen.innerHTML *= -1;
-      });
-
-      const arrow = document.getElementById("button3");
-      arrow.addEventListener("click", () => {
-        let value = lowerscreen.innerHTML;
-        lowerscreen.innerHTML = value.slice(0, -1);
-      });
-
-      const operands = document.querySelectorAll(".orange");
-      operands.forEach((element) => {
-        element.addEventListener("click", () => {
-          let operand = element.innerHTML;
-          let screen1 = lowerscreen.innerHTML;
-          switch (operand) {
-            case "+":
-              lowerscreen.innerHTML += operand;
-              break;
-            case "-":
-              lowerscreen.innerHTML += operand;
-              break;
-            case "x":
-              lowerscreen.innerHTML += "*";
-              break;
-            case "%":
-              lowerscreen.innerHTML += "/";
-              break;
-            case "=":
-              let result = eval(screen1);
-              upperscreen.innerHTML = result;
-              break;
-
-            default:
-              break;
-          }
-        });
-      });
-    </script>
-  </body>
 </html>
